@@ -1,13 +1,11 @@
 window.onload = () => {
     let isAuth = JSON.parse(window.localStorage.getItem("auth"));
     if(Boolean(isAuth)) {
-        console.log("ola")
         window.location.href = "/";
     }
 };
 let isAuth = JSON.parse(window.sessionStorage.getItem("auth"));
 
-console.log(isAuth)
 
 const formLogin = document.getElementById("#login");
 
@@ -21,7 +19,6 @@ formLogin.addEventListener("submit", (event) => {
         username,
         password,
     };
-    console.log(data);
     fetch(`https://portifolio-nied-checkout.herokuapp.com/api/auth`, {
         method: "POST",
         body: JSON.stringify(data),
