@@ -6,7 +6,9 @@ if (Boolean(isAuth)) {
 //const BASEURL = "https://nied-checkout.herokuapp.com;
 
 function listAllOfMonth() {
-    const results = fetch("https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/listAll")
+    const results = fetch(
+        "https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/listAll"
+    )
         .then((response) => response.json())
         .then((response) => {
             const containerListagem = document.getElementById(
@@ -21,10 +23,18 @@ function listAllOfMonth() {
                     ? -1
                     : 0;
             });
-            let lastDay = response[0];
-            let sale_day_last_day_field =
-                document.getElementById("#cash-in-hand-last-day");
-            sale_day_last_day_field.innerHTML = Number(lastDay.cash_in_hand);
+
+            if (response.length > 0) {
+                let sale_of_month = 0;
+
+                response.forEach((checkout) => {
+                    sale_of_month += checkout.sale_day;
+                });
+
+                let sale_of_month_field =
+                    document.getElementById("#sale-of-month");
+                sale_of_month_field.innerHTML = Number(sale_of_month);
+            }
 
             response.map((data) => {
                 let date = new Date(data.day);
@@ -66,6 +76,5 @@ function saveDataSessionStorage(element) {
     let id = JSON.stringify(element.querySelector("input").value);
     window.sessionStorage.setItem("id", id);
 }
-
 
 setInterval(listAllOfMonth, 10000);
