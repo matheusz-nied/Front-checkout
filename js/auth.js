@@ -22,7 +22,7 @@ formLogin.addEventListener("submit", (event) => {
         password,
     };
     console.log(data);
-    fetch(`https://web-nied-checkout.herokuapp.com/api/auth`, {
+    fetch(`https://portifolio-nied-checkout.herokuapp.com/api/auth`, {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-type": "application/json; charset=UTF-8" },

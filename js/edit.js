@@ -1,7 +1,7 @@
 function fillInData() {
     let id = JSON.parse(window.sessionStorage.getItem("id"));
 
-    fetch(`https://web-nied-checkout.herokuapp.com/api/checkoutDay/findOneByID/${id}`)
+    fetch(`https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/findOneByID/${id}`)
         .then((response) => response.json())
         .then((response) => {
             let day_field = document.getElementById("#day");
@@ -106,7 +106,7 @@ form.addEventListener("submit", (event) => {
         cash_in_hand_card,
         payments,
     };
-    fetch(`https://web-nied-checkout.herokuapp.com/api/checkoutDay/${id_field.value}`, {
+    fetch(`https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/${id_field.value}`, {
         method: "PUT",
         body: JSON.stringify(data),
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -121,7 +121,7 @@ form.addEventListener("submit", (event) => {
 function deletePayment() {
     let id = document.getElementById("#id").value;
 
-    fetch(`https://web-nied-checkout.herokuapp.com/api/checkoutDay/${id}`, {
+    fetch(`https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/${id}`, {
         method: "delete",
         headers: { "Content-type": "application/json; charset=UTF-8" },
     })

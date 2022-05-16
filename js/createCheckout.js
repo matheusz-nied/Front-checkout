@@ -38,7 +38,7 @@ form.addEventListener("submit", (event) => {
         cash_in_hand_card,
         payments,
     };
-    fetch("https://web-nied-checkout.herokuapp.com/api/checkoutDay", {
+    fetch("https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay", {
         method: "POST",
         body: JSON.stringify(data),
         headers: { "Content-type": "application/json; charset=UTF-8" },
