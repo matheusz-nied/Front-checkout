@@ -23,8 +23,8 @@ function listAllOfMonth() {
             });
             let lastDay = response[0];
             let sale_day_last_day_field =
-                document.getElementById("#sale-day-last-day");
-            sale_day_last_day_field.innerHTML = Number(lastDay.sale_day);
+                document.getElementById("#cash-in-hand-last-day");
+            sale_day_last_day_field.innerHTML = Number(lastDay.cash_in_hand);
 
             response.map((data) => {
                 let date = new Date(data.day);
