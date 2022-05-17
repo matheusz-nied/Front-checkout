@@ -1,6 +1,3 @@
-listAllOfMonth();
-
-
 function listAllOfMonth() {
     const results = fetch(
         "https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/listAll"
@@ -63,10 +60,13 @@ function listAllOfMonth() {
         });
 }
 
+
+
 function addZero(numero) {
     if (numero <= 9) return "0" + numero;
     else return numero;
 }
+window.onload = listAllOfMonth();
 
 function saveDataSessionStorage(element) {
     let id = JSON.stringify(element.querySelector("input").value);
