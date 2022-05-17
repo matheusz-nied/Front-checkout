@@ -1,7 +1,3 @@
-let isAuth = JSON.parse(window.localStorage.getItem("auth"));
-if (Boolean(isAuth)) {
-    listAllOfMonth();
-}
 
 //const BASEURL = "https://nied-checkout.herokuapp.com;
 

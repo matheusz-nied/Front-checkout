@@ -69,7 +69,7 @@ a {
 
 .nied-card {
     transform: translateY(0) scale(1);
-    transition: 1s;
+    transition: .67s;
 
     &:hover{
         transform: translateY(-10px) scale(1.1);
