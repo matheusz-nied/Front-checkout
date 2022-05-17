@@ -1,5 +1,5 @@
+listAllOfMonth();
 
-//const BASEURL = "https://nied-checkout.herokuapp.com;
 
 function listAllOfMonth() {
     const results = fetch(
