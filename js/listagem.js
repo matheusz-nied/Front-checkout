@@ -60,17 +60,14 @@ function listAllOfMonth() {
         });
 }
 
-
-
 function addZero(numero) {
     if (numero <= 9) return "0" + numero;
     else return numero;
 }
-window.onload = listAllOfMonth();
 
 function saveDataSessionStorage(element) {
     let id = JSON.stringify(element.querySelector("input").value);
     window.sessionStorage.setItem("id", id);
 }
 
-setInterval(listAllOfMonth, 10000);
+listAllOfMonth();
