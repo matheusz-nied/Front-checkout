@@ -41,6 +41,9 @@ a {
       color: #2287ec;
       font-size: 1.9rem; }
 
+.nied-spinner {
+  margin-left: 30%; }
+
 .nied-body {
   min-height: 78vh; }
 
