@@ -1,12 +1,16 @@
 function listAllOfMonth() {
+    const containerListagem = document.getElementById("#container-listagem");
+    containerListagem.insertAdjacentHTML(
+        "beforeend",
+        `    <span uk-spinner="ratio: 4.5"></span>
+        `
+    );
     const results = fetch(
         "https://portifolio-nied-checkout.herokuapp.com/api/checkoutDay/listAll"
     )
         .then((response) => response.json())
         .then((response) => {
-            const containerListagem = document.getElementById(
-                "#container-listagem"
-            );
+            
 
             containerListagem.innerHTML = "";
             response.sort((checkout, otherCheckout) => {
